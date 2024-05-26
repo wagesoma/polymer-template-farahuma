@@ -1,10 +1,23 @@
 {
   "name": "polymer-template-farahuma",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Template project to start building IBC enabled Solidity contracts, with Hardhat and Foundry support",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "hardhat test",
+    "compile": "hardhat compile",
+    "clean": "hardhat clean",
+    "deploy": "hardhat run scripts/deploy.js",
+    "lint": "eslint ./contracts",
+    "format": "prettier --write ./contracts",
+    "build": "hardhat compile && forge build",
+    "verify": "hardhat verify --network mainnet DEPLOYED_CONTRACT_ADDRESS",
+    "security": "npm audit",
+    "prepare": "husky install",
+    "docs": "jsdoc -c jsdoc.json",
+    "start": "node index.js",
+    "coverage": "hardhat coverage",
+    "analyze": "slither ."
   },
   "repository": {
     "type": "git",
@@ -12,24 +25,46 @@
   },
   "keywords": [
     "IBC",
-    "Solidity"
+    "Solidity",
+    "Hardhat",
+    "Foundry",
+    "Smart Contracts"
   ],
   "author": "Polymer Labs",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/open-ibc/ibc-app-solidity-template/issues"
+    "url": "https://github.com/wagesoma/polymer-template-farahuma/issues"
   },
-  "homepage": "https://github.com/open-ibc/ibc-app-solidity-template#readme",
-  "devDependencies": {
-    "@nomicfoundation/hardhat-foundry": "^1.1.1",
-    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
-    "hardhat": "^2.19.5"
-  },
+  "homepage": "https://github.com/wagesoma/polymer-template-farahuma#readme",
   "dependencies": {
     "@openzeppelin/contracts": "^4.7.6",
     "axios": "^1.6.7",
     "dotenv": "^16.4.1",
     "hardhat-verify": "^1.0.0"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-foundry": "^1.1.1",
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "hardhat": "^2.19.5",
+    "eslint": "^8.36.0",
+    "prettier": "^2.8.4",
+    "husky": "^8.0.0",
+    "commitlint": "^17.0.0",
+    "jsdoc": "^4.0.0",
+    "solidity-coverage": "^0.7.21",
+    "slither-analyzer": "^0.8.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "directories": {
     "lib": "lib"
