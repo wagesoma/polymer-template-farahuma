@@ -1,7 +1,7 @@
 {
   "name": "polymer-template-farahuma",
-  "version": "1.0.1",
-  "description": "Template project to start building IBC enabled Solidity contracts, with Hardhat and Foundry support",
+  "version": "1.0.3",
+  "description": "Start building IBC enabled Solidity contracts, with Hardhat and Foundry support",
   "main": "index.js",
   "scripts": {
     "test": "hardhat test",
@@ -16,8 +16,7 @@
     "prepare": "husky install",
     "docs": "jsdoc -c jsdoc.json",
     "start": "node index.js",
-    "coverage": "hardhat coverage",
-    "analyze": "slither ."
+    "coverage": "hardhat coverage"
   },
   "repository": {
     "type": "git",
@@ -51,8 +50,7 @@
     "husky": "^8.0.0",
     "commitlint": "^17.0.0",
     "jsdoc": "^4.0.0",
-    "solidity-coverage": "^0.7.21",
-    "slither-analyzer": "^0.8.0"
+    "solidity-coverage": "^0.8.1"
   },
   "husky": {
     "hooks": {
