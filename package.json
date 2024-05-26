@@ -1,5 +1,5 @@
 {
-  "name": "ibc-app-solidity-template",
+  "name": "polymer-template-farahuma",
   "version": "1.0.0",
   "description": "Template project to start building IBC enabled Solidity contracts, with Hardhat and Foundry support",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/open-ibc/ibc-app-solidity-template.git"
+    "url": "git+https://github.com/wagesoma/polymer-template-farahuma.git"
   },
   "keywords": [
     "IBC",
@@ -30,5 +30,8 @@
     "axios": "^1.6.7",
     "dotenv": "^16.4.1",
     "hardhat-verify": "^1.0.0"
+  },
+  "directories": {
+    "lib": "lib"
   }
 }
